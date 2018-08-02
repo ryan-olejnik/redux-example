@@ -10,11 +10,13 @@ class Posts extends Component {
   }
 
   render() {
+    const postList = this.props.posts.map((post, index) => (
+      <PostCard post={post} index={index} key={index} />
+    ));
+
     return (
       <div {...{ className: "postsContainer" }}>
-        {this.props.posts.map((post, index) => (
-          <PostCard post={post} index={index} />
-        ))}
+        {postList.slice().reverse()}
       </div>
     );
   }

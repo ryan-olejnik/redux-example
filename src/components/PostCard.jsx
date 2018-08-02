@@ -18,7 +18,7 @@ const PostCard = ({ post, index }) => {
     <div key={index} className="post-card">
       <img src={catPics[catIndex]} className="post-card-photo" />
       <div className="post-card-text-container">
-        <h4>{post.title},</h4>
+        <h4>{post.title}</h4>
         <p>{post.body}</p>
       </div>
     </div>

@@ -13,10 +13,7 @@ export default function(state = initialState, action) {
       };
 
     case NEW_POST:
-      return {
-        ...state,
-        items: [action.payload].concat(state.items)
-      };
+      return { ...state, items: state.items.concat([action.payload]) };
 
     default:
       return state;

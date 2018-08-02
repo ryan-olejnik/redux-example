@@ -19,7 +19,7 @@ class NewPostForm extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    console.log("New post:\n", this.state.title, "\n", this.state.body);
+    // console.log("New post:\n", this.state.title, "\n", this.state.body);
     const newPost = { title: this.state.title, body: this.state.body };
     this.props.createNewPost(newPost);
     this.setState({ title: "", body: "" });

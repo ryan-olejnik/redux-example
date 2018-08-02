@@ -27,9 +27,9 @@ class NewPostForm extends Component {
 
   render() {
     return (
-      <div id="formWrapper">
-        <form onSubmit={this.handleFormSubmit} className="newPostForm">
-          <div className="newPostTitle">
+      <div id="form-wrapper">
+        <form onSubmit={this.handleFormSubmit} className="new-post-form">
+          <div className="new-post-title">
             <label>Title:</label>
             <br />
             <input
@@ -41,7 +41,7 @@ class NewPostForm extends Component {
               }}
             />
           </div>
-          <div className="newPostBody">
+          <div className="new-post-body">
             <label>Body:</label>
             <br />
             <textarea

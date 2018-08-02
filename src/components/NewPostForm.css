@@ -1,0 +1,30 @@
+#formWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.newPostForm {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 20em;
+}
+
+.newPostTitle {
+}
+.newPostBody {
+}
+
+.newPostTitle input {
+  width: 100%;
+}
+
+.newPostBody textarea {
+  height: 9em;
+  width: 100%;
+}
+
+.newPostForm button {
+  width: 50%;
+  align-self: center;
+}

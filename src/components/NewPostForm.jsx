@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { createNewPost } from "../actions/postActions";
+import "./NewPostForm.css";
 
 class NewPostForm extends Component {
   constructor() {
@@ -26,35 +27,35 @@ class NewPostForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleFormSubmit}>
-        <div>
-          <label>Title:</label>
-          <br />
-          <input
-            {...{
-              type: "text",
-              name: "title",
-              className: "newPostTitle",
-              value: this.state.title,
-              onChange: this.handleFormChange
-            }}
-          />
-        </div>
-        <div>
-          <label>Body:</label>
-          <br />
-          <textarea
-            {...{
-              type: "text",
-              name: "body",
-              className: "newPostBody",
-              value: this.state.body,
-              onChange: this.handleFormChange
-            }}
-          />
-        </div>
-        <button {...{ type: "submit" }}>Post!</button>
-      </form>
+      <div id="formWrapper">
+        <form onSubmit={this.handleFormSubmit} className="newPostForm">
+          <div className="newPostTitle">
+            <label>Title:</label>
+            <br />
+            <input
+              {...{
+                type: "text",
+                name: "title",
+                value: this.state.title,
+                onChange: this.handleFormChange
+              }}
+            />
+          </div>
+          <div className="newPostBody">
+            <label>Body:</label>
+            <br />
+            <textarea
+              {...{
+                type: "text",
+                name: "body",
+                value: this.state.body,
+                onChange: this.handleFormChange
+              }}
+            />
+          </div>
+          <button {...{ type: "submit" }}>Post!</button>
+        </form>
+      </div>
     );
   }
 }

@@ -1,13 +1,5 @@
-h4 {
-  margin-bottom: 2px;
-  text-align: left;
-}
-
-p {
-  margin: 2px;
-  text-align: left;
-}
-
 .postsContainer {
   width: 70%;
+  display: flex;
+  flex-direction: column;
 }

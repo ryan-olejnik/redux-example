@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PostCard from "./PostCard";
 import { connect } from "react-redux";
 import { fetchPosts } from "../actions/postActions";
 import "./Posts.css";
@@ -12,10 +13,7 @@ class Posts extends Component {
     return (
       <div {...{ className: "postsContainer" }}>
         {this.props.posts.map((post, index) => (
-          <div key={index}>
-            <h4>{post.title}</h4>
-            <p>{post.body}</p>
-          </div>
+          <PostCard post={post} index={index} />
         ))}
       </div>
     );

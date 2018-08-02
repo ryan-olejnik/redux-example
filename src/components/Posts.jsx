@@ -1,23 +1,18 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { fetchPosts } from "../actions/postActions";
 import "./Posts.css";
 
 class Posts extends Component {
-  constructor() {
-    super();
-    this.state = {
-      posts: []
-    };
-  }
   componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then(response => response.json())
-      .then(postList => this.setState({ posts: postList }));
+    this.props.fetchPosts();
   }
 
   render() {
+    console.log("this.props = ", this.props);
     return (
       <div {...{ className: "postsContainer" }}>
-        {this.state.posts.map((post, index) => (
+        {this.props.posts.map((post, index) => (
           <div key={index}>
             <h4>{post.title}</h4>
             <p>{post.body}</p>
@@ -28,4 +23,13 @@ class Posts extends Component {
   }
 }
 
-export default Posts;
+// connect (mapStateToProps, mapDispatchToProps)(COMPONENT)
+
+const mapDispatchToProps = { fetchPosts };
+const mapStateToProps = state => ({
+  posts: state.posts.items
+});
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Posts);

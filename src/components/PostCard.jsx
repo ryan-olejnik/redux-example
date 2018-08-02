@@ -16,7 +16,7 @@ const PostCard = ({ post, index }) => {
 
   return (
     <div key={index} className="post-card">
-      <img src={catPics[catIndex]} className="post-card-photo" />
+      <img src={catPics[catIndex]} className="post-card-photo" alt="cat face" />
       <div className="post-card-text-container">
         <h4>{post.title}</h4>
         <p>{post.body}</p>

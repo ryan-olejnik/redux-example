@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import PostCard from "./PostCard";
-import { connect } from "react-redux";
-import { fetchPosts } from "../actions/postActions";
-import "./Posts.css";
+import React, { Component } from 'react';
+import PostCard from './PostCard';
+import { connect } from 'react-redux';
+import { fetchPosts } from '../actions/postActions';
+import './Posts.css';
 
 class Posts extends Component {
   componentDidMount() {
@@ -15,7 +15,7 @@ class Posts extends Component {
     ));
 
     return (
-      <div {...{ className: "postsContainer" }}>
+      <div {...{ className: 'postsContainer' }}>
         {postList.slice().reverse()}
       </div>
     );
@@ -24,10 +24,10 @@ class Posts extends Component {
 
 // connect (mapStateToProps, mapDispatchToProps)(COMPONENT)
 
-const mapDispatchToProps = { fetchPosts };
 const mapStateToProps = state => ({
   posts: state.posts.items
 });
+const mapDispatchToProps = { fetchPosts };
 export default connect(
   mapStateToProps,
   mapDispatchToProps
